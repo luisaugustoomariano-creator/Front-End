@@ -5,9 +5,9 @@ export default function Dashboard() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("https://SEU-ENDPOINT/webhook/dashboard")
+    fetch("https://strong-nourishment-production-703e.up.railway.app/webhook/dashboard")
       .then(res => res.json())
-      .then(setData);
+      .then(res => setData(res[0])); // pega o primeiro item
   }, []);
 
   if (!data) return <div>Carregando...</div>;
